@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const axiosInstance = axios.create({
+const axiosStarWars = axios.create({
     baseURL: 'https://swapi.dev/api/',
     headers: {
         'Content-Type': 'application/json',
     },
 });
 
-export default axiosInstance;
+export default axiosStarWars;
