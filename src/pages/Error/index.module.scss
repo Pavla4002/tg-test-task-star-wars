@@ -1,0 +1,12 @@
+@import "src/app/base";
+
+.errorPage {
+  background-color: $dark-bg-color;
+  padding: 96px 82px;
+
+  .btnBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

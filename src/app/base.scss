@@ -18,7 +18,6 @@ $heightNavBar: 93px;
   padding: $paddingTop  $main-g-padding;
   background: $bgColor;
   z-index: 1;
-
 }
 
 @mixin adaptivePagePadding ($sizeWindow, $paddingV, $paddingG) {

@@ -38,6 +38,10 @@
     right: 0;
     top: 0;
 
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
     img {
       width: 100%;
 
@@ -47,6 +51,10 @@
 
       @media (max-width: 1440px) {
         width: 70%;
+      }
+
+      @media (max-width: 1024px) {
+        width: 55%;
       }
     }
   }
