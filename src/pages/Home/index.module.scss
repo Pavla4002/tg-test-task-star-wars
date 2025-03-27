@@ -1,0 +1,53 @@
+@import "src/app/base";
+
+.homePage {
+  @include pageBase(128px, linear-gradient($main-color, $dark-bg-color));
+  @include adaptivePagePadding(1600px, 5%, 10%);
+
+  overflow: hidden;
+  color: white;
+
+  h1 {
+    font-weight: 300;
+    font-size: 72px;
+
+    @include adaptiveText(1440px, 55px, 300);
+    @include adaptiveText(1024px, 40px, 300);
+  }
+
+  p {
+    padding-top: 64px;
+
+    font-weight: 300;
+    font-size: 32px;
+
+    @include paddingTop(1600px, 40px);
+    @include adaptiveText(1024px, 22px, 300);
+  }
+
+  .textContentHome {
+    width: 516px;
+    
+    @media (max-width: 1024px) {
+      width: 50%;
+    }
+  }
+
+  .banner {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    img {
+      width: 100%;
+
+      @media (max-width: 1600px) {
+        width: 90%;
+      }
+
+      @media (max-width: 1440px) {
+        width: 70%;
+      }
+    }
+  }
+}

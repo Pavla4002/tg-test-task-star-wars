@@ -1,0 +1,40 @@
+@import "src/app/base";
+
+
+.yellowBtn {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 17px 57px 22px;
+  margin-top: 64px;
+
+  background-color: #FFC107 ;
+  border-radius: 11px;
+  box-shadow: inset 0 -10px 0 rgb(209, 158, 6);
+
+  a {
+    color: black;
+    font-weight: bold;
+  }
+}
+
+.greenBtn {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 17px 57px 22px;
+  margin-top: 64px;
+
+  background-color: #73D677 ;
+  border-radius: 11px;
+  box-shadow: inset 0 -10px 0 rgb(94, 175, 98);
+
+  @include paddingTop(1600px, 40px);
+
+  a {
+    color: black;
+    font-weight: bold;
+  }
+}

@@ -1,7 +1,9 @@
 @import "src/app/base";
 
 .navbar {
-  height: 93px;
+  position: relative;
+
+  height: $heightNavBar;
 
   display: flex;
   justify-content: space-between;
@@ -9,7 +11,10 @@
   padding: 10px $main-g-padding;
 
   background-color: $main-color;
-  box-shadow: 0 8px 8px 0 rgba(241, 241, 241, 0.2);
+  border-bottom: 2px solid transparent;
+  box-shadow: 0 4px 10px rgba(224, 221, 221, 0.35);
+
+  z-index: 10;
 }
 
 

@@ -9,3 +9,33 @@ $yellow: #F5DB13;
 $nav-link-line-color: #CFDAB0;
 
 $main-g-padding: 157px;
+
+$heightNavBar: 93px;
+
+@mixin pageBase ($paddingTop, $bgColor) {
+  position: relative;
+  height: calc(100vh - $heightNavBar);
+  padding: $paddingTop  $main-g-padding;
+  background: $bgColor;
+  z-index: 1;
+
+}
+
+@mixin adaptivePagePadding ($sizeWindow, $paddingV, $paddingG) {
+  @media (max-width: $sizeWindow) {
+    padding: $paddingV $paddingG;
+  }
+}
+
+@mixin adaptiveText ($sizeWindow, $fontSize, $fontWeight: normal) {
+  @media (max-width: $sizeWindow) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+  }
+}
+
+@mixin paddingTop ($sizeWindow, $pt) {
+  @media (max-width: $sizeWindow) {
+    padding-top: $pt;
+  }
+}

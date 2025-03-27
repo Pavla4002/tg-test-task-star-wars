@@ -16,8 +16,8 @@ export const useCharacters = () => {
 
     // const { data, isLoading, error } = useQuery<Character[], Error>(['characters'], fetchCharacters, {
     //     onSuccess: (data) => {
-    //         setCharacters(data); // Сохранение данных в Zustand после успешного запроса
-    //         setLoading(false); // Остановка загрузки
+    //         setCharacters(data);
+    //         setLoading(false);
     //     }
     // });
 
