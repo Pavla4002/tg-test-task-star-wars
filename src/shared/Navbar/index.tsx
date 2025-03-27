@@ -3,6 +3,7 @@ import styles from './index.module.scss';
 import {NavLink} from "react-router-dom";
 import {routesEnum} from "../../app/routes/routesEnum";
 import logo from '../../app/images/Logo.png';
+import LinkNav from "../LinkNav";
 
 function Navbar() {
     return (
@@ -11,16 +12,8 @@ function Navbar() {
                 <img src={logo} alt="Логотип Star Wars"/>
             </div>
             <div className={styles.boxLinksNav}>
-                <NavLink to={routesEnum.HOME} className={isActive =>
-                    !isActive ? 'nnn' : `${styles.active}`
-                }>
-                    Home
-                </NavLink>
-                <NavLink to={routesEnum.CHARACTERS} className={isActive =>
-                    !isActive ? 'nnn' : styles.active
-                }>
-                    Characters
-                </NavLink>
+                <LinkNav to={routesEnum.HOME} textTo="Home"/>
+                <LinkNav to={routesEnum.CHARACTERS} textTo="Characters"/>
             </div>
         </nav>
     );

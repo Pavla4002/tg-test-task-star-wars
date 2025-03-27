@@ -1,0 +1,24 @@
+@import "src/app/base";
+
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+
+
+  &.active::after {
+    content: '';
+    position: absolute;
+    color: #07D6F2;
+    bottom: -15px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background-color: $nav-link-line-color;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+}
+

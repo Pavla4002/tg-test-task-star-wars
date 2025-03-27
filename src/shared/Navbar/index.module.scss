@@ -20,31 +20,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  a {
-    position: relative;
-    text-decoration: none;
-    color: white;
-    font-size: 25px;
-
-    &.active {
-      color: blue;
-    }
-
-    &.active::after {
-      content: '';
-      position: absolute;
-      color: #07D6F2;
-      bottom: -15px;
-      left: 0;
-      width: 80%;
-      height: 2px;
-      background-color: $nav-link-line-color;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-  }
-
 }
 
 
