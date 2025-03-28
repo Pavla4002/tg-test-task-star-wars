@@ -1,0 +1,28 @@
+@import "src/app/base";
+
+
+.charactersPage {
+  @include pageBase(28px, white);
+  @include adaptivePagePadding(1600px, 3%, 10%);
+
+  .langBox {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+
+  .titleCharactersList {
+    display: flex;
+    justify-content: center;
+    padding-top: 28px;
+
+    h1 {
+      font-size: 35px;
+      text-shadow: 0 2px 2px rgba(0, 0, 0, 0.31);
+
+      strong {
+        font-weight: 800;
+      }
+    }
+  }
+}

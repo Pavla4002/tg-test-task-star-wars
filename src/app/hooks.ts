@@ -13,12 +13,22 @@ const fetchCharacters = async () : Promise<Character[]> => {
 
 export const useCharacters = () => {
     const { setCharacters, setLoading, setError } = useCharactersStore();
+    // <Character[], Error>
+    const { data,isSuccess , isLoading, error } = useQuery<Character[], Error>({queryKey:['characters'], queryFn: fetchCharacters, refetchOnWindowFocus: false});
 
-    // const { data, isLoading, error } = useQuery<Character[], Error>(['characters'], fetchCharacters, {
-    //     onSuccess: (data) => {
-    //         setCharacters(data);
-    //         setLoading(false);
-    //     }
-    // });
+    useEffect(() => {
+        if(isSuccess) {
+            console.log(data);
+            setCharacters(data);
+        }
 
+        if(error){
+            console.log(error)
+            setError(error.message)
+        }
+    }, [isSuccess, data, error, setCharacters, setError]);
+
+
+
+    return { data,isSuccess , isLoading, error };
 };
