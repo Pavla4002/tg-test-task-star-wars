@@ -20,7 +20,7 @@ function Characters() {
                 language: en
             </div>
             <div className={styles.titleCharactersList}>
-                <h1><strong>60 Peoples</strong> for you to choose your <strong>favorite</strong></h1>
+                <h1><strong>{data ? data.length : 'Some'} Peoples</strong> for you to choose your <strong>favorite</strong></h1>
             </div>
             <div className="">
                 {isLoading && <div>Загрузка...</div>}

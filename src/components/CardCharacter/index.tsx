@@ -8,7 +8,17 @@ interface CharacterInfo {
 function CardCharacter({dataCharacter}:CharacterInfo) {
     return (
         <div className={styles.cardCharacter}>
-            <span><b>{dataCharacter.name}</b></span>
+            <span className={styles.title}><b>{dataCharacter.name}</b></span>
+            <div className={styles.infoBox}>
+                <div>
+                    <span className={styles.infoValue}>{dataCharacter.height}</span>
+                    <span className={styles.infoName}>height</span>
+                </div>
+                <div className={styles.info}>
+                    <span className={styles.infoValue}>{dataCharacter.mass}</span>
+                    <span className={styles.infoName}>mass</span>
+                </div>
+            </div>
         </div>
     );
 }
