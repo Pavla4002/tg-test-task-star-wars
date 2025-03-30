@@ -1,0 +1,13 @@
+@import "src/app/base";
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 200px;
+  margin-top: 20px;
+
+  background-color: $secondary-color;
+}

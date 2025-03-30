@@ -14,7 +14,7 @@
   border-bottom: 2px solid transparent;
   box-shadow: 0 4px 10px rgba(224, 221, 221, 0.35);
 
-  z-index: 10;
+  z-index: 5;
 
   @include adaptivePagePadding(1600px, 10px, 10%);
 }

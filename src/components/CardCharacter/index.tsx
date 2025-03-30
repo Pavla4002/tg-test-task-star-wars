@@ -19,6 +19,9 @@ function CardCharacter({dataCharacter}:CharacterInfo) {
                     <span className={styles.infoName}>mass</span>
                 </div>
             </div>
+            <div className={styles.tags}>
+                
+            </div>
         </div>
     );
 }
