@@ -5,18 +5,21 @@ import TagColor from "../../shared/TagColor";
 import hermaphrodite from '../../app/images/hermaphrodite.png';
 import IconMale from '../../app/images/Iconmale.png';
 import IconFemale from '../../app/images/Iconfemale.png';
+import idk from '../../app/images/idk.png';
 
 
 function ModalWindow() {
     let {selectCharacter, modalOpen, setModalOpen} = useCharactersStore();
-    let img;
 
+    let img;
     if (selectCharacter!.gender==="male") {
         img = IconFemale;
     }else if (selectCharacter!.gender==="female"){
         img = IconMale;
-    }else{
+    }else if (selectCharacter!.gender==="hermaphrodite") {
         img = hermaphrodite;
+    }else{
+        img = idk;
     }
 
     function closeModal () {
@@ -37,10 +40,25 @@ function ModalWindow() {
                             <TagColor color="blue">{selectCharacter!.birth_year}</TagColor>
                         </div>
                     </div>
-                    <div className={styles.infoPers}></div>
+                    <div className={styles.infoPers}>
+                        <p id={styles.namePers}>{selectCharacter!.name}</p>
+                        <div className={styles.whiteBoxInfo}>
+                            {selectCharacter!.hair_color !== "n/a" && selectCharacter!.hair_color !== "none"
+                                ? <p>hair color: {selectCharacter!.hair_color}</p>
+                                : ""
+                            }
+                            {selectCharacter!.skin_color !== "n/a" && selectCharacter!.skin_color !== "none"
+                                ? <p>skin color - {selectCharacter!.skin_color}</p>
+                                : ""
+                            }
+                            {selectCharacter!.eye_color !== "n/a" && selectCharacter!.eye_color !== "none"
+                                ?   <p>eye color: {selectCharacter!.eye_color}</p>
+                                : ""
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
-            {/*<p>{selectCharacter!.name}</p>*/}
         </div>
     );
 }

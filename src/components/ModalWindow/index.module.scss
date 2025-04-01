@@ -36,9 +36,22 @@
       height: 370px;
 
       .imagePers {
+        position: relative;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
         background-color: $main-color;
 
+        img {
+          position: absolute;
+          top: 30px;
+          left: 50%;
+          transform: translate(-50%);
+        }
+
         .tagsBox {
+          position: absolute;
+          bottom: 16px;
+          right: 14px;
           display: flex;
 
           > *:not(:first-child) {
@@ -48,7 +61,25 @@
       }
 
       .infoPers {
+        padding: 30px 12px;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
         background: linear-gradient($dark-bg-color, $main-color);
+
+        #namePers {
+          font-size: 36px;
+          color: white;
+        }
+
+        .whiteBoxInfo {
+          width: 264px;
+          height: fit-content;
+          margin-top: 20px;
+          padding: 15px 23px;
+          background-color: white;
+          border-radius: 8px;
+
+        }
       }
 
     }
