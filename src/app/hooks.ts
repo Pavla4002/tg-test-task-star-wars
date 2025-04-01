@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import axiosInstance from './api/axios';
+import axiosStarWars from './api/axios';
 import useCharactersStore from "../store/store";
 import {Character} from "../types/characters";
 import {useEffect} from "react";
@@ -13,7 +13,7 @@ interface CharacterData {
 
 // Функция для получения данных о персонажах
 const fetchCharacters = async (page: number) : Promise<CharacterData> => {
-    const { data }  = await axiosInstance.get(`people/?page=${page}`);
+    const { data }  = await axiosStarWars.get(`people/?page=${page}`);
     return {characters: data.results, next : data.results, previous: data.previous}
 };
 

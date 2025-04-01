@@ -61,12 +61,13 @@
       }
 
       .infoPers {
+        position: relative;
         padding: 30px 12px;
         border-top-right-radius: 16px;
         border-bottom-right-radius: 16px;
         background: linear-gradient($dark-bg-color, $main-color);
 
-        #namePers {
+        .namePers {
           font-size: 36px;
           color: white;
         }
@@ -80,6 +81,27 @@
           border-radius: 8px;
 
         }
+
+        .massHeight {
+          display: flex;
+          position: absolute;
+          bottom: 25px;
+
+          > *:not(:first-child) {
+            margin-left: 25px;
+          }
+
+          .bgWhiteInfo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 85px;
+            height: 70px;
+            background-color: white;
+            border-radius: 8px;
+          }
+        }
+
       }
 
     }

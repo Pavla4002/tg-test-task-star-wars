@@ -6,6 +6,7 @@ import hermaphrodite from '../../app/images/hermaphrodite.png';
 import IconMale from '../../app/images/Iconmale.png';
 import IconFemale from '../../app/images/Iconfemale.png';
 import idk from '../../app/images/idk.png';
+import CircleInfo from "../../shared/CircleInfo";
 
 
 function ModalWindow() {
@@ -41,7 +42,7 @@ function ModalWindow() {
                         </div>
                     </div>
                     <div className={styles.infoPers}>
-                        <p id={styles.namePers}>{selectCharacter!.name}</p>
+                        <p className={styles.namePers}>{selectCharacter!.name}</p>
                         <div className={styles.whiteBoxInfo}>
                             {selectCharacter!.hair_color !== "n/a" && selectCharacter!.hair_color !== "none"
                                 ? <p>hair color: {selectCharacter!.hair_color}</p>
@@ -55,6 +56,14 @@ function ModalWindow() {
                                 ?   <p>eye color: {selectCharacter!.eye_color}</p>
                                 : ""
                             }
+                        </div>
+                        <div className={styles.massHeight}>
+                            <div className={styles.bgWhiteInfo}>
+                                <CircleInfo infoName={"height"} infoValue={selectCharacter!.height} />
+                            </div>
+                            <div className={styles.bgWhiteInfo}>
+                                <CircleInfo infoName={"mass"} infoValue={selectCharacter!.mass} />
+                            </div>
                         </div>
                     </div>
                 </div>
