@@ -1,0 +1,26 @@
+@import "src/app/base";
+
+
+@mixin tag ($colorBg, $colorShadow) {
+  padding: 1px 15px;
+  background-color: $colorBg;
+  box-shadow: inset 0 -2px 0 $colorShadow;
+  border-radius: 11px;
+  font-size: 12px;
+}
+
+.blueBtn {
+  @include tag($blue, $blue-shadow)
+}
+
+.greenBtn {
+  @include tag($green, $green-shadow)
+}
+
+.yellowBtn {
+  @include tag($yellow, $yellow-shadow)
+}
+
+.purpleBtn {
+  @include tag($purple, $purple-shadow)
+}

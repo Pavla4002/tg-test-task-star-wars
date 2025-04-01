@@ -5,30 +5,38 @@ import {Character} from "../types/characters";
 import {useEffect} from "react";
 
 
+interface CharacterData {
+    characters: Character[],
+    next: string | null;
+    previous: string | null;
+}
+
 // Функция для получения данных о персонажах
-const fetchCharacters = async () : Promise<Character[]> => {
-    const response = await axiosInstance.get('people/');
-    return response.data.results;
+const fetchCharacters = async (page: number) : Promise<CharacterData> => {
+    const { data }  = await axiosInstance.get(`people/?page=${page}`);
+    return {characters: data.results, next : data.results, previous: data.previous}
 };
 
-export const useCharacters = () => {
+export const useCharacters = (page: number) => {
     const { setCharacters, setLoading, setError } = useCharactersStore();
-    // <Character[], Error>
-    const { data,isSuccess , isLoading, error } = useQuery<Character[], Error>({queryKey:['characters'], queryFn: fetchCharacters, refetchOnWindowFocus: false});
+
+    const { data, isSuccess, isLoading, error } = useQuery<CharacterData, Error>({
+        queryKey: ['characters', page],
+        queryFn: () => fetchCharacters(page),
+        refetchOnWindowFocus: false,
+    });
 
     useEffect(() => {
         if(isSuccess) {
-            console.log(data);
-            setCharacters(data);
+            setCharacters(data.characters);
         }
 
         if(error){
-            console.log(error)
             setError(error.message)
         }
     }, [isSuccess, data, error, setCharacters, setError]);
 
 
 
-    return { data,isSuccess , isLoading, error };
+    return { data,isSuccess, isLoading, error, setLoading };
 };

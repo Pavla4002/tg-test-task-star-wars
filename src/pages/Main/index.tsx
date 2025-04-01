@@ -6,14 +6,17 @@ import Home from "../Home";
 import Characters from "../Characters";
 import Error from "../Error";
 import Navbar from "../../shared/Navbar";
+import useCharactersStore from "../../store/store";
+import ModalWindow from "../../components/ModalWindow";
 
 function Main() {
     const location = useLocation();
+    let {modalOpen, setModalOpen} = useCharactersStore();
 
     const isErrorPage = location.pathname !== routesEnum.HOME && location.pathname !== routesEnum.CHARACTERS;
     return (
         <div style={{position:'relative'}}>
-            {/*<ModalWindow/>*/}
+            {modalOpen && <ModalWindow />}
             {!isErrorPage && <Navbar />}
             <Routes>
                 <Route path={routesEnum.HOME} element={<Home/>} />

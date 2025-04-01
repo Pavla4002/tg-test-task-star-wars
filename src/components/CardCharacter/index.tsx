@@ -1,13 +1,23 @@
 import styles from './index.module.scss'
 import {Character} from "../../types/characters";
+import TagColor from "../../shared/TagColor";
+import useCharactersStore from "../../store/store";
 
 interface CharacterInfo {
     dataCharacter: Character;
 }
 
 function CardCharacter({dataCharacter}:CharacterInfo) {
+
+    let {setModalOpen, setSelectCharacter} = useCharactersStore();
+
+    function setCharacterAndModal () {
+        setModalOpen(true);
+        setSelectCharacter(dataCharacter);
+    }
+
     return (
-        <div className={styles.cardCharacter}>
+        <div className={styles.cardCharacter} onClick={() => setCharacterAndModal()}>
             <span className={styles.title}><b>{dataCharacter.name}</b></span>
             <div className={styles.infoBox}>
                 <div>
@@ -20,7 +30,8 @@ function CardCharacter({dataCharacter}:CharacterInfo) {
                 </div>
             </div>
             <div className={styles.tags}>
-                
+                <TagColor>{dataCharacter.gender}</TagColor>
+                <TagColor color="blue">{dataCharacter.birth_year}</TagColor>
             </div>
         </div>
     );
