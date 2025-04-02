@@ -3,24 +3,60 @@ import {useCharacters} from "../../app/hooks";
 import ListCharacters from "../../components/ListCharacters";
 import ModalWindow from "../../components/ModalWindow";
 import Loader from "../../shared/Loader";
-import {useState} from "react";
+import React, {useState} from "react";
+import Pagination from "../../shared/Pagination";
+import EyeColorSelect from "../../shared/FilterData";
+
+import {z} from "zod";
+import {useForm} from "react-hook-form";
+
+
+type FormValues = {
+    eye_color: string;
+};
 
 function Characters() {
-    let [page, setPage] = useState<number>(1);
+    const { data, isSuccess, isLoading, error } = useCharacters();
 
-    const { data, isSuccess, isLoading, error } = useCharacters(page);
+    const { control, watch, formState: { errors } } = useForm<FormValues>({
+        defaultValues: {
+            eye_color: 'All',
+        },
+    });
 
-    const handleNextPage = () => {
-        if (data?.next) {
-            setPage(page + 1);
-        }
-    };
+    const selectedEyeColor = watch('eye_color');
 
-    const handlePrevPage = () => {
-        if (page > 1) {
-            setPage(page - 1);
-        }
-    };
+    const [currentPage, setCurrentPage] = useState<number>(1);
+
+    const itemsPerPage = 9;
+    const characters = data || [];
+
+    const filteredCharacters  = selectedEyeColor === 'All'
+        ?  characters
+        : characters.filter((character) => character.eye_color === selectedEyeColor);
+
+    const indexOfLastCharacter = currentPage * itemsPerPage;
+    const indexOfFirstCharacter = indexOfLastCharacter - itemsPerPage;
+    const currentCharacters = filteredCharacters!.slice(indexOfFirstCharacter, indexOfLastCharacter);
+
+
+    let changePage = (page: number) =>{
+        setCurrentPage(page);
+    }
+
+    if (isLoading) {
+        return <Loader /> ;
+    }
+
+    if (error) {
+        return <div>Error loading data: {error.message}</div>;
+    }
+
+
+    const schema = z.object({
+        eye_color: z.string().nonempty("Please select an eye color"),
+    });
+
 
     return (
         <div className={styles.charactersPage}>
@@ -31,22 +67,21 @@ function Characters() {
             {isLoading ? <Loader /> :
                 <>
                     <div className={styles.titleCharactersList}>
-                        <h1><strong>{data ? data.characters.length : 'Some'} Peoples</strong> for you to choose your <strong>favorite</strong></h1>
+                        <h1><strong>{data ? data.length : 'Some'} Peoples</strong> for you to choose your <strong>favorite</strong></h1>
                     </div>
                     <div className="">
-                        {data!==undefined && <ListCharacters listCharacters={data.characters}/> }
+                        <EyeColorSelect control={control} />
+                    </div>
+                    <div>
+                        {currentCharacters!==undefined && <ListCharacters listCharacters={currentCharacters}/> }
                     </div>
                 </>
             }
-            <div className="">
-            {/*    Пагинация*/}
-                <button onClick={handlePrevPage} disabled={page === 1}>
-                    Prev
-                </button>
-                <button onClick={handleNextPage} disabled={!data?.next}>
-                    Next
-                </button>
-            </div>
+            <Pagination
+                charactersLength={filteredCharacters.length}
+                currentPage={currentPage}
+                itemsPerPage={itemsPerPage}
+                setCurrentPage={changePage}/>
         </div>
     );
 }

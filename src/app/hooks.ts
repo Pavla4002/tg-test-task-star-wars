@@ -5,30 +5,32 @@ import {Character} from "../types/characters";
 import {useEffect} from "react";
 
 
-interface CharacterData {
-    characters: Character[],
-    next: string | null;
-    previous: string | null;
-}
+const fetchCharacters = async () : Promise<Character[]> => {
+    let allCharacters: Character[] = [];
+    let nextPageUrl = 'people/';
 
-// Функция для получения данных о персонажах
-const fetchCharacters = async (page: number) : Promise<CharacterData> => {
-    const { data }  = await axiosStarWars.get(`people/?page=${page}`);
-    return {characters: data.results, next : data.results, previous: data.previous}
+    while (nextPageUrl) {
+        const { data } = await axiosStarWars.get(nextPageUrl);
+        allCharacters = [...allCharacters, ...data.results];
+        nextPageUrl = data.next;
+    }
+
+    return allCharacters;
 };
 
-export const useCharacters = (page: number) => {
+export const useCharacters = () => {
     const { setCharacters, setLoading, setError } = useCharactersStore();
 
-    const { data, isSuccess, isLoading, error } = useQuery<CharacterData, Error>({
-        queryKey: ['characters', page],
-        queryFn: () => fetchCharacters(page),
+    const { data, isSuccess, isLoading, error } = useQuery<Character[], Error>({
+        queryKey: ['characters'],
+        queryFn: fetchCharacters,
         refetchOnWindowFocus: false,
     });
 
     useEffect(() => {
+
         if(isSuccess) {
-            setCharacters(data.characters);
+            setCharacters(data);
         }
 
         if(error){

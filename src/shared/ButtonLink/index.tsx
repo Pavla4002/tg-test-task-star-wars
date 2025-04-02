@@ -1,5 +1,5 @@
 import styles from './index.module.scss';
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 interface ButtonProps {
     colorBtn: 'yellowBtn' | 'greenBtn';
@@ -10,7 +10,7 @@ interface ButtonProps {
 function ButtonLink({colorBtn, children, to} : ButtonProps) {
     return (
         <div className={styles[colorBtn]}>
-            <NavLink to={to}>{children}</NavLink>
+            <Link to={to}>{children}</Link>
         </div>
     );
 }
