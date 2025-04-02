@@ -52,10 +52,10 @@ function Characters() {
         return <div>Error loading data: {error.message}</div>;
     }
 
-
-    const schema = z.object({
-        eye_color: z.string().nonempty("Please select an eye color"),
-    });
+    // Пока что без zod
+    // const schema = z.object({
+    //     eye_color: z.string().nonempty("Please select an eye color"),
+    // });
 
 
     return (
