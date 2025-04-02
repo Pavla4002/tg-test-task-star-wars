@@ -58,12 +58,16 @@ function ModalWindow() {
                             }
                         </div>
                         <div className={styles.massHeight}>
-                            <div className={styles.bgWhiteInfo}>
-                                <CircleInfo infoName={"height"} infoValue={selectCharacter!.height} />
-                            </div>
-                            <div className={styles.bgWhiteInfo}>
-                                <CircleInfo infoName={"mass"} infoValue={selectCharacter!.mass} />
-                            </div>
+                            { selectCharacter!.height!=='unknown' &&
+                                <div className={styles.bgWhiteInfo}>
+                                    <CircleInfo infoName={"height"} infoValue={selectCharacter!.height} />
+                                </div>
+                            }
+                            { selectCharacter!.mass!=='unknown' &&
+                                <div className={styles.bgWhiteInfo}>
+                                    <CircleInfo infoName={"mass"} infoValue={selectCharacter!.mass} />
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

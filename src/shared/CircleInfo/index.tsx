@@ -7,6 +7,8 @@ interface CircleInfoProps {
 
 function CircleInfo({infoName, infoValue}: CircleInfoProps) {
 
+    console.log(infoValue)
+    console.log(infoName)
     if(infoValue==="unknown") {
         return <></>;
     }
