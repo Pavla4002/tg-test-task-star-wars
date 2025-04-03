@@ -6,7 +6,7 @@ interface LinkProps {
     textTo: string;
 }
 
-function LinkNav({to, textTo}: LinkProps) {
+const LinkNav = ({to, textTo}: LinkProps) => {
     return (
         <NavLink to={to} className={({isActive}) => isActive ? styles.active : ''}>
             {textTo}

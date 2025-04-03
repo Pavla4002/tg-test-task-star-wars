@@ -9,7 +9,7 @@ import Navbar from "../../shared/Navbar";
 import useCharactersStore from "../../store/store";
 import ModalWindow from "../../components/ModalWindow";
 
-function Main() {
+const Main = ()  => {
     const location = useLocation();
     let {modalOpen, setModalOpen} = useCharactersStore();
 

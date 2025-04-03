@@ -5,7 +5,7 @@ import {routesEnum} from "../../app/routes/routesEnum";
 import logo from '../../app/images/Logo.png';
 import LinkNav from "../LinkNav";
 
-function Navbar() {
+const Navbar = () => {
     return (
         <nav className={styles.navbar}>
             <div className={styles.logoBox}>

@@ -8,7 +8,7 @@ interface CharacterInfo {
     dataCharacter: Character;
 }
 
-function CardCharacter({dataCharacter}:CharacterInfo) {
+const CardCharacter = ({dataCharacter}:CharacterInfo) => {
 
     let {setModalOpen, setSelectCharacter} = useCharactersStore();
 

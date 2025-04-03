@@ -15,7 +15,7 @@ type FormValues = {
     eye_color: string;
 };
 
-function Characters() {
+const Characters = () => {
     const { data, isSuccess, isLoading, error } = useCharacters();
 
     const { control, watch, formState: { errors } } = useForm<FormValues>({

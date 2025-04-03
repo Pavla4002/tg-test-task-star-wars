@@ -5,7 +5,7 @@ import {Character} from "../types/characters";
 import {useEffect} from "react";
 
 
-const fetchCharacters = async () : Promise<Character[]> => {
+const getDataCharacters = async () : Promise<Character[]> => {
     let allCharacters: Character[] = [];
     let nextPageUrl = 'people/';
 
@@ -23,8 +23,7 @@ export const useCharacters = () => {
 
     const { data, isSuccess, isLoading, error } = useQuery<Character[], Error>({
         queryKey: ['characters'],
-        queryFn: fetchCharacters,
-        refetchOnWindowFocus: false,
+        queryFn: getDataCharacters,
     });
 
     useEffect(() => {

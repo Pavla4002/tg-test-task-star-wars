@@ -5,7 +5,7 @@ interface CircleInfoProps {
     infoValue: string | number;
 }
 
-function CircleInfo({infoName, infoValue}: CircleInfoProps) {
+const CircleInfo = ({infoName, infoValue}: CircleInfoProps) => {
 
     console.log(infoValue)
     console.log(infoName)

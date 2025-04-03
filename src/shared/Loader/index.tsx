@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
 import React from 'react';
 
-function Loader() {
+const Loader = () => {
     return (
         <div className={styles.loader}>
             <h4>Загрузка данных...</h4>

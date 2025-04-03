@@ -2,7 +2,7 @@ import styles from './index.module.scss';
 import banner from '../../app/images/banner.png';
 import {routesEnum} from "../../app/routes/routesEnum";
 import ButtonLink from "../../shared/ButtonLink";
-function Home() {
+const Home = () =>{
     return (
         <div className={styles.homePage}>
             <div className={styles.textContentHome}>

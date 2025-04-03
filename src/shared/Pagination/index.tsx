@@ -8,7 +8,7 @@ interface PaginationProps {
     setCurrentPage: (currentPage: number) => void;
 }
 
-function Pagination({currentPage, itemsPerPage, charactersLength, setCurrentPage} : PaginationProps) {
+const Pagination = ({currentPage, itemsPerPage, charactersLength, setCurrentPage} : PaginationProps) => {
 
     const countPages = charactersLength%itemsPerPage!==0? Math. trunc(charactersLength/itemsPerPage)+1 : charactersLength/itemsPerPage;
     const handleNextPage = () => {

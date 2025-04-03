@@ -9,7 +9,7 @@ import idk from '../../app/images/idk.png';
 import CircleInfo from "../../shared/CircleInfo";
 
 
-function ModalWindow() {
+const ModalWindow = () => {
     let {selectCharacter, modalOpen, setModalOpen} = useCharactersStore();
 
     let img;
