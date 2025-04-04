@@ -2,14 +2,19 @@ import {fireEvent, render, screen} from '@testing-library/react';
 import CardCharacter from "./index";
 import useCharactersStore from '../../store/store'
 
-jest.mock('../../store/store', () => ({
-    useCharactersStore: jest.fn(() => ({
+// Мок Zustand хранилища
+jest.mock('../../store/store', () => {
+    const zustand = jest.requireActual('zustand');
+
+    const mockStoreCharacters = {
         setModalOpen: jest.fn(),
-        setSelectCharacter: jest.fn(),
-    })),
-}));
+        setSelectCharacter: jest.fn()
+    };
 
+    return { __esModule: true, default: zustand.create(() => mockStoreCharacters) };
+});
 
+//  Тестовые данные (первая карточка)
 let testDataCharacter = {
     birth_year: "19BBY",
     created: "2014-12-09T13:50:51.644000Z",
@@ -30,10 +35,8 @@ let testDataCharacter = {
 }
 
 describe('CharacterCard', () => {
-    const mockSetModalOpen = jest.fn();
-    const mockSetSelectCharacter = jest.fn();
 
-    test('корректно отображает данные после асинхронной загрузки', () => {
+    test('корректно отображает данные', () => {
         render(<CardCharacter dataCharacter={testDataCharacter} />);
 
         expect(screen.getByText(/Luke Skywalker/i)).toBeInTheDocument();
@@ -49,8 +52,7 @@ describe('CharacterCard', () => {
         const element = screen.getByText('Luke Skywalker');
         fireEvent.click(element);
 
-        // Проверяем, что функция mock была вызвана
-        expect(mockSetModalOpen).toHaveBeenCalledWith(true);
-        expect(mockSetSelectCharacter).toHaveBeenCalledWith(testDataCharacter);
+        expect(useCharactersStore.getState().setModalOpen).toHaveBeenCalledWith(true);
+        expect(useCharactersStore.getState().setSelectCharacter).toHaveBeenCalledWith(testDataCharacter);
     });
 });
