@@ -1,9 +1,13 @@
 @use "../../assets/base" as *;
 
 .paginationBox {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   display: flex;
   margin-top: 2%;
-  padding-bottom: 30px;
+  padding: 20px 0;
+  background-color: #fff;
 
   > *:not(:first-child) {
     margin-left: 20px;

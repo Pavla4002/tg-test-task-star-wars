@@ -7,7 +7,6 @@ import React, {useState} from "react";
 import Pagination from "../../components/Pagination";
 import EyeColorSelect from "../../components/FilterData";
 
-import {z} from "zod";
 import {useForm} from "react-hook-form";
 
 
@@ -51,12 +50,6 @@ const Characters = () => {
     if (error) {
         return <div>Error loading data: {error.message}</div>;
     }
-
-    // Пока что без zod
-    // const schema = z.object({
-    //     eye_color: z.string().nonempty("Please select an eye color"),
-    // });
-
 
     return (
         <div className={styles.charactersPage}>

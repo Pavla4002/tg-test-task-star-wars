@@ -1,0 +1,20 @@
+@use "../../assets/base" as *;
+
+.filterSelect {
+  width: 150px;
+  margin-left: 20px;
+  padding: 5px;
+  background-color: $secondary-color;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+
+  &:focus, :active {
+    border: none;
+  }
+
+  option {
+    border: none;
+    background-color: $secondary-color;
+  }
+}
