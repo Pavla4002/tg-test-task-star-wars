@@ -1,14 +1,16 @@
-import { Controller } from 'react-hook-form';
+import {Control, Controller} from 'react-hook-form';
 
+type ControlType = {
+    eye_color: string
+}
 
 interface EyeColorSelectProps {
-    control?: any;
-    errors?: any;
+    control: Control<ControlType>;
 }
 
 const eyeColors = ['All', 'brown', 'red', 'blue', 'white'];
 
-const EyeColorSelect= ({ control, errors } : EyeColorSelectProps) => {
+const EyeColorSelect= ({ control } : EyeColorSelectProps) => {
     return (
         <div>
             <label>Eye Color</label>
@@ -19,13 +21,12 @@ const EyeColorSelect= ({ control, errors } : EyeColorSelectProps) => {
                     <select {...field}>
                         {eyeColors.map((color) => (
                             <option key={color} value={color}>
-                                {color === 'all' ? 'All Eye Colors' : color}
+                                {color === 'All' ? 'All' : color}
                             </option>
                         ))}
                     </select>
                 )}
             />
-            {/*{errors.eye_color && <span>{errors.eye_color.message}</span>}*/}
         </div>
     );
 };

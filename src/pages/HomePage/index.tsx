@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
-import banner from '../../app/images/banner.png';
+import banner from '../../assets/images/banner.png';
 import {routesEnum} from "../../app/routes/routesEnum";
-import ButtonLink from "../../shared/ButtonLink";
+import ButtonLink from "../../components/ButtonLink";
 const Home = () =>{
     return (
         <div className={styles.homePage}>

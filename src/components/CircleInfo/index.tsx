@@ -5,10 +5,9 @@ interface CircleInfoProps {
     infoValue: string | number;
 }
 
-const CircleInfo = ({infoName, infoValue}: CircleInfoProps) => {
+const CircleInfo = (props: CircleInfoProps) => {
+    const {infoName, infoValue} = props;
 
-    console.log(infoValue)
-    console.log(infoName)
     if(infoValue==="unknown") {
         return <></>;
     }

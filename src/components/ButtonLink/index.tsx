@@ -1,5 +1,5 @@
 import styles from './index.module.scss';
-import {Link, NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 interface ButtonProps {
     colorBtn: 'yellowBtn' | 'greenBtn';

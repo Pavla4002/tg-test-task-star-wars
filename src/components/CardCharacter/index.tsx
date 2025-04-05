@@ -1,8 +1,8 @@
 import styles from './index.module.scss'
 import {Character} from "../../types/characters";
-import TagColor from "../../shared/TagColor";
+import TagColor from "../TagColor";
 import useCharactersStore from "../../store/store";
-import CircleInfo from "../../shared/CircleInfo";
+import CircleInfo from "../CircleInfo";
 
 interface CharacterInfo {
     dataCharacter: Character;

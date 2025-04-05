@@ -1,4 +1,4 @@
-@import "src/app/base";
+@use "../../assets/base"  as *;
 
 .homePage {
   @include pageBase(128px, linear-gradient($main-color, $dark-bg-color));

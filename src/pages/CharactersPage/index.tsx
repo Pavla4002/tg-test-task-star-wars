@@ -1,11 +1,11 @@
 import styles from "./index.module.scss";
-import {useCharacters} from "../../app/hooks";
+import {useCharacters} from "../../services";
 import ListCharacters from "../../components/ListCharacters";
-import ModalWindow from "../../components/ModalWindow";
-import Loader from "../../shared/Loader";
+
+import Loader from "../../components/Loader";
 import React, {useState} from "react";
-import Pagination from "../../shared/Pagination";
-import EyeColorSelect from "../../shared/FilterData";
+import Pagination from "../../components/Pagination";
+import EyeColorSelect from "../../components/FilterData";
 
 import {z} from "zod";
 import {useForm} from "react-hook-form";
@@ -16,9 +16,9 @@ type FormValues = {
 };
 
 const Characters = () => {
-    const { data, isSuccess, isLoading, error } = useCharacters();
+    const { data, isLoading, error } = useCharacters();
 
-    const { control, watch, formState: { errors } } = useForm<FormValues>({
+    const { control, watch } = useForm<FormValues>({
         defaultValues: {
             eye_color: 'All',
         },

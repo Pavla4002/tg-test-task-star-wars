@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import axiosStarWars from './api/axios';
+import axiosStarWars from '../app/api/axios';
 import useCharactersStore from "../store/store";
 import {Character} from "../types/characters";
 import {useEffect} from "react";

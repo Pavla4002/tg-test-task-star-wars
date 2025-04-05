@@ -1,12 +1,12 @@
 import styles from './index.module.scss'
 import useCharactersStore from "../../store/store";
-import closeIcon from '../../app/images/closeIcon.svg'
-import TagColor from "../../shared/TagColor";
-import hermaphrodite from '../../app/images/hermaphrodite.png';
-import IconMale from '../../app/images/Iconmale.png';
-import IconFemale from '../../app/images/Iconfemale.png';
-import idk from '../../app/images/idk.png';
-import CircleInfo from "../../shared/CircleInfo";
+import closeIcon from '../../assets/images/closeIcon.svg'
+import TagColor from "../TagColor";
+import hermaphrodite from '../../assets/images/hermaphrodite.png';
+import IconMale from '../../assets/images/Iconmale.png';
+import IconFemale from '../../assets/images/Iconfemale.png';
+import idk from '../../assets/images/idk.png';
+import CircleInfo from "../CircleInfo";
 
 
 const ModalWindow = () => {
