@@ -1,5 +1,5 @@
 import React from 'react';
-import {Character} from "../../types/characters";
+import {Character} from "@/types/characters";
 import CardCharacter from "../CardCharacter";
 import styles from './index.module.scss'
 

@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
-import error404 from '../../assets/images/error404.png'
-import ButtonLink from "../../components/ButtonLink";
-import {routesEnum} from "../../app/routes/routesEnum";
+import error404 from '@/assets/images/error404.png'
+import ButtonLink from "@/components/ButtonLink";
+import {routesEnum} from "@/app/routes/routesEnum";
 const Error = () => {
     return (
         <div className={styles.errorPage}>

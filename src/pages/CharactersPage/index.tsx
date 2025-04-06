@@ -1,11 +1,11 @@
 import styles from "./index.module.scss";
-import {useCharacters} from "../../services";
-import ListCharacters from "../../components/ListCharacters";
+import {useCharacters} from "@/services";
+import ListCharacters from "@/components/ListCharacters";
 
-import Loader from "../../components/Loader";
+import Loader from "@/components/Loader";
 import React, {useState} from "react";
-import Pagination from "../../components/Pagination";
-import EyeColorSelect from "../../components/FilterData";
+import Pagination from "@/components/Pagination";
+import EyeColorSelect from '@/components/FilterData';
 
 import {useForm} from "react-hook-form";
 

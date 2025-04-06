@@ -1,5 +1,4 @@
 import styles from './index.module.scss';
-import {memo} from "react";
 
 interface PaginationProps {
     currentPage: number;
@@ -10,7 +9,7 @@ interface PaginationProps {
 
 const Pagination = ({currentPage, itemsPerPage, charactersLength, setCurrentPage} : PaginationProps) => {
 
-    const countPages = charactersLength%itemsPerPage!==0? Math. trunc(charactersLength/itemsPerPage)+1 : charactersLength/itemsPerPage;
+    const countPages = charactersLength%itemsPerPage!==0? Math.trunc(charactersLength/itemsPerPage)+1 : charactersLength/itemsPerPage;
     const handleNextPage = () => {
         if (currentPage * itemsPerPage < charactersLength) {
             setCurrentPage(currentPage + 1);
@@ -38,4 +37,4 @@ const Pagination = ({currentPage, itemsPerPage, charactersLength, setCurrentPage
     );
 }
 
-export default memo(Pagination);
+export default Pagination;

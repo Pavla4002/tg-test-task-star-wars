@@ -1,11 +1,11 @@
 import styles from './index.module.scss'
-import useCharactersStore from "../../store/store";
-import closeIcon from '../../assets/images/closeIcon.svg'
+import useCharactersStore from "@/store/store";
+import closeIcon from '@/assets/images/closeIcon.svg'
 import TagColor from "../TagColor";
-import hermaphrodite from '../../assets/images/hermaphrodite.png';
-import IconMale from '../../assets/images/Iconmale.png';
-import IconFemale from '../../assets/images/Iconfemale.png';
-import idk from '../../assets/images/idk.png';
+import hermaphrodite from '@/assets/images/hermaphrodite.png';
+import IconMale from '@/assets/images/Iconmale.png';
+import IconFemale from '@/assets/images/Iconfemale.png';
+import idk from '@/assets/images/idk.png';
 import CircleInfo from "../CircleInfo";
 
 

@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import {Character} from "../types/characters";
+import {Character} from "@/types/characters";
 import { devtools } from 'zustand/middleware'
 
 

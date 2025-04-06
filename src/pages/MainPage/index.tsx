@@ -1,11 +1,11 @@
 import {Route, Routes, useLocation} from "react-router-dom";
-import {routesEnum} from "../../app/routes/routesEnum";
+import {routesEnum} from "@/app/routes/routesEnum";
 import Home from "../HomePage";
 import Characters from "../CharactersPage";
 import Error from "../ErrorPage";
-import Navbar from "../../components/Navbar";
-import useCharactersStore from "../../store/store";
-import ModalWindow from "../../components/ModalWindow";
+import Navbar from "@/components/Navbar";
+import useCharactersStore from "@/store/store";
+import ModalWindow from "@/components/ModalWindow";
 
 const Main = ()  => {
     const location = useLocation();

@@ -1,5 +1,4 @@
 import styles from "./index.module.scss";
-import {string} from "zod";
 
 interface TagProps {
     color?: 'blue' | 'green' | 'yellow' | 'purple';
