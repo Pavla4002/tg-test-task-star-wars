@@ -12,7 +12,8 @@ interface EyeColorSelectProps {
 
 const eyeColors = ['All', 'brown', 'red', 'blue', 'white'];
 
-const EyeColorSelect= ({ control } : EyeColorSelectProps) => {
+const EyeColorSelect= ( props: EyeColorSelectProps) => {
+    const { control } = props;
     return (
         <div>
             <label>color eye</label>

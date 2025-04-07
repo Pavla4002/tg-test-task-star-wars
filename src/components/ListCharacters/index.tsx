@@ -7,7 +7,8 @@ interface CharactersList {
     listCharacters: Character[];
 }
 
-const ListCharacters = ({listCharacters}: CharactersList) => {
+const ListCharacters = (props: CharactersList) => {
+    const {listCharacters} = props;
     return (
         <div className={styles.list}>
             {

@@ -5,7 +5,8 @@ interface TagProps {
     children: string;
 }
 
-const  TagColor = ({color, children} : TagProps) => {
+const  TagColor = (props : TagProps) => {
+    const {color, children} = props;
 
     let colorTag: 'blue' | 'green' | 'yellow' | 'purple' | undefined;
 

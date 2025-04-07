@@ -7,7 +7,8 @@ interface ButtonProps {
     to: string;
 }
 
-const ButtonLink = ({colorBtn, children, to} : ButtonProps) => {
+const ButtonLink = ( props : ButtonProps) => {
+    const {colorBtn, children, to} = props;
     return (
         <div className={styles[colorBtn]}>
             <Link to={to}>{children}</Link>
