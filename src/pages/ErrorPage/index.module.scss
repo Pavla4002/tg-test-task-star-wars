@@ -4,6 +4,15 @@
   background-color: $dark-bg-color;
   padding: 96px 82px;
 
+  @media (max-width: 768px) {
+    height: 100vh;
+  }
+
+  img {
+    width: 100%;
+  }
+
+
   .btnBox {
     width: 100%;
     display: flex;

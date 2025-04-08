@@ -5,10 +5,12 @@
   @include pageBase(28px, white);
   @include adaptivePagePadding(1600px, 3%, 10%);
 
-  .langBox {
-    width: 100%;
-    display: flex;
-    justify-content: end;
+  .boxListCharacters {
+
+    @media (max-width: 2560px) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   .titleCharactersList {

@@ -6,10 +6,10 @@ const Error = () => {
     return (
         <div className={styles.errorPage}>
             <div className="">
-                <img src={error404} alt=""/>
+                <img src={error404} alt="error 404"/>
             </div>
             <div className={styles.btnBox}>
-        <ButtonLink colorBtn="greenBtn" to={routesEnum.HOME}>Return</ButtonLink>
+                <ButtonLink colorBtn="greenBtn" to={routesEnum.HOME}>Return</ButtonLink>
             </div>
 
         </div>

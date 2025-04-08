@@ -1,13 +1,12 @@
 import styles from "./index.module.scss";
 import {useCharacters} from "@/services";
 import ListCharacters from "@/components/ListCharacters";
-
 import Loader from "@/components/Loader";
 import React, {useState} from "react";
 import Pagination from "@/components/Pagination";
 import EyeColorSelect from '@/components/FilterData';
-
 import {useForm} from "react-hook-form";
+
 
 
 type FormValues = {
@@ -53,19 +52,15 @@ const Characters = () => {
 
     return (
         <div className={styles.charactersPage}>
-            <div className={styles.langBox}>
-                {/*Пока что просто текст*/}
-                language: en
-            </div>
             {isLoading ? <Loader /> :
                 <>
                     <div className={styles.titleCharactersList}>
                         <h1><strong>{data ? data.length : 'Some'} Peoples</strong> for you to choose your <strong>favorite</strong></h1>
                     </div>
-                    <div className="">
+                    <div style={{marginTop: '20px'}}>
                         <EyeColorSelect control={control} />
                     </div>
-                    <div>
+                    <div className={styles.boxListCharacters}>
                         {currentCharacters!==undefined && <ListCharacters listCharacters={currentCharacters}/> }
                     </div>
                 </>
