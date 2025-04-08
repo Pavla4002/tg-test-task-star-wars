@@ -1,14 +1,22 @@
 @use "../../assets/base" as *;
 
-.loader {
+.loaderBox {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 100px;
 
-  width: 100%;
-  height: 200px;
-  margin-top: 20px;
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  text-align: center;
-  background-color: $secondary-color;
+    width: 60%;
+    height: 200px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: $secondary-color;
+  }
 }
+
