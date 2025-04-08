@@ -7,6 +7,10 @@ a {
   color: white;
   font-size: 25px;
 
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
+
 
   &.active::after {
     content: '';

@@ -21,7 +21,7 @@ root.render(
   <React.StrictMode>
       <BrowserRouter>
           <QueryClientProvider client={queryClient}>
-          <Router/>
+              <Router/>
           </QueryClientProvider>
       </BrowserRouter>
   </React.StrictMode>
